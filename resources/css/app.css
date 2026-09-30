@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+    html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        @apply bg-[#F7F7F8] text-[#18181B] font-sans text-[14px] leading-relaxed;
+    }
+
+    *:focus-visible {
+        @apply outline-2 outline-[#C8102E] outline-offset-2 rounded-md;
+    }
+}
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
+@layer components {
+    .app-card {
+        @apply bg-white border border-[#E4E4E7] rounded-2xl 
+               shadow-[0_1px_2px_rgba(0,0,0,0.04)];
+    }
+
+    .app-btn {
+        @apply inline-flex items-center justify-center gap-2
+               font-medium text-[14px] px-4 py-2.5
+               rounded-xl border border-transparent
+               transition-all duration-150 cursor-pointer
+               no-underline whitespace-nowrap leading-tight;
+    }
+
+    .app-btn-primary {
+        @apply bg-[#C8102E] text-white border-[#C8102E]
+               hover:bg-[#A50D25] hover:border-[#A50D25];
+    }
+
+    .app-btn-secondary {
+        @apply bg-white text-[#18181B] border-[#E4E4E7]
+               hover:bg-[#FAFAFA] hover:border-[#71717A];
+    }
+
+    .app-btn-ghost {
+        @apply bg-transparent text-[#52525B]
+               hover:bg-[#FAFAFA] hover:text-[#18181B];
+    }
+
+    .app-btn-danger {
+        @apply bg-[#DC2626] text-white border-[#DC2626]
+               hover:bg-[#B91C1C];
+    }
+
+    .app-badge {
+        @apply inline-flex items-center gap-1
+               px-2.5 py-1 rounded-full
+               text-[12px] font-medium leading-none whitespace-nowrap;
+    }
+
+    .app-input {
+        @apply w-full px-3.5 py-2.5 bg-white
+               border border-[#E4E4E7] rounded-xl
+               text-[14px] text-[#18181B]
+               transition-all duration-150
+               focus:outline-none focus:border-[#C8102E]
+               focus:ring-2 focus:ring-[#FDECEF];
+    }
+
+    .app-label {
+        @apply block text-[13px] font-medium 
+               text-[#18181B] mb-1.5;
+    }
+
+    .app-helper {
+        @apply text-[12px] text-[#71717A] mt-1;
+    }
+
+    .app-error {
+        @apply text-[12px] text-[#DC2626] mt-1;
+    }
+
+    .app-ticket-number {
+        @apply font-mono text-[13px] font-semibold 
+               text-[#52525B] tracking-tight;
+    }
+
+    .app-empty {
+        @apply text-center py-16 px-6;
+    }
+
+    .app-sidebar-section {
+        @apply text-[11px] font-semibold text-[#71717A]
+               uppercase tracking-wider
+               px-3 pt-4 pb-1.5;
+    }
+
+    .app-sidebar-link {
+        @apply flex items-center gap-3 px-3 py-2
+               text-[14px] font-medium text-[#52525B]
+               rounded-lg transition-all duration-150 no-underline;
+    }
+
+    .app-sidebar-link:hover {
+        @apply bg-[#FAFAFA] text-[#18181B];
+    }
+
+    .app-sidebar-link-active {
+        @apply bg-[#FDECEF] text-[#C8102E] font-semibold;
+    }
+
+    .app-slide-up {
+        animation: appSlideUp 250ms ease-out;
+    }
+
+    .app-fade-in {
+        animation: appFadeIn 200ms ease-out;
+    }
+}
+
+@keyframes appSlideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes appFadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+[x-cloak] { display: none !important; }
